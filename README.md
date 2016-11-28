@@ -4,6 +4,7 @@ Prova da MioCoderDjo su PC lavoro
 Prova da c9 di mariopolito
 Di nuovo una riga da miocoderdojo
 5 rigo da miocoderdojo
+6 rigo
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
