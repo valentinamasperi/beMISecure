@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  model: MyString
+  securityLevel: 1
+
+two:
+  status: MyString
+  model: MyString
+  securityLevel: 1
