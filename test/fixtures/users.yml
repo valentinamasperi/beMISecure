@@ -2,8 +2,16 @@
 
 one:
   name: MyString
+  surname: MyString
+  birthdate: 2017-01-14
+  phonenumber: MyString
   email: MyString
+  password: MyString
 
 two:
   name: MyString
+  surname: MyString
+  birthdate: 2017-01-14
+  phonenumber: MyString
   email: MyString
+  password: MyString
