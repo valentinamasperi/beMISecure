@@ -10,6 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+ActiveRecord::Schema.define(version: 20170114160700) do
+
+  create_table "stations", force: :cascade do |t|
+    t.integer  "position"
+    t.integer  "number_chains"
+    t.integer  "station_number"
+    t.integer  "free_chains"
+    t.string   "station_name"
+    t.integer  "lockers"
+    t.integer  "security"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+
 ActiveRecord::Schema.define(version: 20170114160026) do
 
   create_table "chains", force: :cascade do |t|
@@ -18,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170114160026) do
     t.integer  "securityLevel"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+
   end
 
   create_table "users", force: :cascade do |t|
