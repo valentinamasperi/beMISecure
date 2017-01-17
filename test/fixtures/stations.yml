@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: 1
+  number_chains: 1
+  station_number: 1
+  free_chains: 1
+  station_name: MyString
+  lockers: 1
+  security: 1
+
+two:
+  position: 1
+  number_chains: 1
+  station_number: 1
+  free_chains: 1
+  station_name: MyString
+  lockers: 1
+  security: 1
