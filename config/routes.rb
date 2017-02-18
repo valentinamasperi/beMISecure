@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'home/welcome'
+
+  devise_for :users
   resources :users
   resources :stations
   resources :chains
