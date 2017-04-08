@@ -2,10 +2,33 @@
 
 <h1>Stations</h1>
 
+ <div id="leafletMap"></div>
+
+ <%= javascript_tag do %>
+    var leafletMap= L.map('leafletMap').setView([45.463683, 9.190619], 9);
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(leafletMap);
+    // icon 
+    var greenIcon= L.icon({
+    iconUrl: '<%= asset_path "bici_stencil.jpg" %>',
+    iconSize: [30,36], // size1 of the icon
+    iconAnchor: [8, 18], // point of the icon which will correspond to marker's location
+    popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
+        });
+    var marker= new Array(); 
+    <% @stations.each_with_index do |station, contatore| %>
+      marker[<%= contatore %>] = L.marker([<%= station.lat %>,<%=station.long%>], {icon: greenIcon}).addTo(leafletMap);
+      marker[<%= contatore %>].bindPopup('<b><%= station.station_name %></b>')
+    <% end %>
+   <% end %>
 <table>
   <thead>
     <tr>
-      <th>Position</th>
+      <th>Latitudine</th>
+      <th>Longitudine</th>
+      <th>Indirizzo</th>
       <th>Number chains</th>
       <th>Station number</th>
       <th>Free chains</th>
@@ -19,8 +42,9 @@
   <tbody>
     <% @stations.each do |station| %>
       <tr>
-        <td><%= station.position %></td>
-        <td><%= station.number_chains %></td>
+        <td><%= station.lat %></td>
+        <td><%= station.long %></td>
+        <td><%= station.address %></td>
         <td><%= station.station_number %></td>
         <td><%= station.free_chains %></td>
         <td><%= station.station_name %></td>

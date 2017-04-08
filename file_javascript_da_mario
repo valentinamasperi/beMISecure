@@ -4,6 +4,7 @@
     width: 100%;
 
     #leafletMap { height: 400px; width: 100%; }
+    
     <%= stylesheet_link_tag    'https://unpkg.com/leaflet@1.0.2/dist/leaflet.css' %>
     <%= javascript_include_tag 'https://unpkg.com/leaflet@1.0.2/dist/leaflet.js' %>
 
