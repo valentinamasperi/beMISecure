@@ -17,12 +17,15 @@
     iconAnchor: [8, 18], // point of the icon which will correspond to marker's location
     popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
         });
-    var marker= new Array(); 
-    <% @stations.each_with_index do |station, contatore| %>
-      marker[<%= contatore %>] = L.marker([<%= station.lat %>,<%=station.long%>], {icon: greenIcon}).addTo(leafletMap);
-      marker[<%= contatore %>].bindPopup('<b><%= station.station_name %></b>')
-    <% end %>
-   <% end %>
+
+    var marker= new Array();
+    <% @stations.each_with_index  do |station, contatore| %>
+      marker[<%= contatore %>] = L.marker([<%= station.lat %>, <%= station.long %>], {icon: greenIcon}).addTo(leafletMap);
+      marker[<%= contatore %>].bindPopup('<b> <%= station.station_name + " - " + station.address %> </b>');
+    <%  end  %>
+  <% end %>
+
+
 <table>
   <thead>
     <tr>
